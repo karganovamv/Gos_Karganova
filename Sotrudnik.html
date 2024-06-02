@@ -2,7 +2,7 @@
   <body>
     <form name="person" onSubmit = f()>
       <h2>Информация о сотруднике</h2>
-      Табельный №: <input type = "text" name="tabel"><br><br>
+      Табельный №: <input type = "text" name="tab"><br><br>
       Подразделение: <select name= "otdel" size= "1" ><br>
         <option selected value= "finotdel" >Финансовый отдел</option>
         <option value= "yuridotd" >Юридический отдел</option>
@@ -12,21 +12,21 @@
       ФИО: <input type = "text" name="fio"><br><br>
       Телефон: <input type = "text" name="tel"><br><br>
       Дата приема: <input type = "text" name="datapr"><br><br>
-      Должность: <input type = "text" name="dol"><br><br>
-      <br><br><input type = "submit" value = "Сохранить">
+      Должность: <input type = "text" name="position"><br><br>
+      <br><input type = "submit" value = "Сохранить">
     </form>
     <script>
       function f(){
-          tabel = person.tabel.value
+          tab = person.tab.value
           otdel = person.otdel.value
           fio = person.fio.value
           tel = person.tel.value
           datapr = person.datapr.value
-          dol = person.dol.value
-          S = "<table border=1><tr><th>Tabel</th><th>Otdel</th><th>FIO</th><th>Telephone</th><th>Datapr</th><th>Dol</th></tr>"
-          S+="<tr><td>"+tabel+"</td><td>"+otdel+"</td><td>"+fio+"</td><td>"+tel+"</td><td>"+datapr+"</td><td>"+dol+"</td></tr></table>"
-          data = "Tabel, Otdel, FIO, Telephone, Datapr, Dol\n"
-          data+=tabel+","+otdel+","+fio+","+tel+","+datapr+","+dol+""
+          position = person.position.value
+          S = "<table border=1><tr><th>Tabel</th><th>Otdel</th><th>FIO</th><th>Telephone</th><th>Datapr</th><th>Position</th></tr>"
+          S+="<tr><td>"+tab+"</td><td>"+otdel+"</td><td>"+fio+"</td><td>"+tel+"</td><td>"+datapr+"</td><td>"+position+"</td></tr></table>"
+          data = "Tabel, Otdel, FIO, Telephone, Datapr, Position\n"
+          data+=tab+","+otdel+","+fio+","+tel+","+datapr+","+position+""
           window.open('data:text/csv;charset=utf-8,'+escape(data));
           document.write(S)
       }
