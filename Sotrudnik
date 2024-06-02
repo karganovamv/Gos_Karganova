@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <form name="person" onSubmit = f()>
+      <h2>Информация о сотруднике</h2>
+      Табельный №: <input type = "text" name="tabel"><br><br>
+      Подразделение: <select name= "otdel" size= "1" ><br>
+        <option selected value= "fin.otdel" >Финансовый отдел</option>
+        <option value= "yurid.otd" >Юридический отдел</option>
+        <option value= "kadry" >Кадровый отдел</option>
+        <option value= "proectoffice" >Проектный офис</option>
+      </select><br><br>
+      ФИО: <input type = "text" name="fio"><br><br>
+      Телефон: <input type = "text" name="tel"><br><br>
+      Дата приема: <input type = "text" name="datapr"><br><br>
+      Должность: <input type = "text" name="dol"><br><br>
+    </form>
+    <script>
+      function f(){
+          tabel = person.tabel.value
+          otdel = person.otdel.value
+          fio = person.fio.value
+          tel = person.tel.value
+          datapr = person.datapr.value
+          S = "<table border=1><tr><th>Tabel</th><th>Otdel</th><th>FIO</th><th>Telephone</th><th>Datapr</th><th>Dol</th></tr>"
+          S+="<tr><td>"+tabel+"</td><td>"+otdel+"</td><td>"+fio+"</td><td>"+tel+"</td><td>"+datapr+"</td><td>"+dol+"</td></tr></table>"
+          data = "Tabel, Otdel, FIO, Telephone, Datapr, Dol\n"
+          data+=tabel+","+otdel+","+fio+","+tel+","+datapr+","+dol+""
+          window.open('data:text/csv;charset=utf-8,'+escape(data));
+          document.write(S)
+      }
+    </script>
+  </body>
+</html>
